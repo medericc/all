@@ -51,7 +51,7 @@ const [modalOpen, setModalOpen] = useState(false);
 
 
   return (
-   <main className="min-h-screen flex flex-col justify-between items-center bg-purple-700 px-6 pt-6 text-white">
+   <main className="min-h-screen flex flex-col justify-between items-center bg-purple-700 px-6 pt-4 text-white">
   {/* Haut */}
       <div className="flex flex-col items-center justify-center w-full flex-grow ">
         <h1 className="text-4xl font-bold mb-10">Léna et Jade</h1>
