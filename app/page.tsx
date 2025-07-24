@@ -89,9 +89,10 @@ const [modalOpen, setModalOpen] = useState(false);
     <footer className="w-screen bg-gradient-to-b from-purple-700 to-purple-900 py-6">
 
 <p className="text-sm text-white text-opacity-70 text-center mx-auto w-full max-w-none">
-  Fait avec  <span className="text-2xl mr-2 ml-1 inline-block relative -bottom-1 text-white drop-shadow-[0_0_4px_rgba(255,255,255,0.7)] heartbeat">
+  Fait avec <span className="text-2xl mr-2 ml-1 inline-block relative -bottom-1 text-white font-bold drop-shadow-[0_0_2px_rgba(255,255,255,0.4)] heartbeat">
   &hearts;
 </span>
+
   par <strong>Jade et Léna Fan Page</strong>
 </p>
 
