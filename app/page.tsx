@@ -1,7 +1,13 @@
 'use client'
-
+ import { useState } from "react";
 import { Calendar, Video, Globe, LinkIcon } from "lucide-react";
 import { FaYoutube, FaTiktok, FaInstagram } from "react-icons/fa";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const links = [
   {
@@ -38,36 +44,64 @@ const links = [
 ];
 
 export default function HomePage() {
+
+ 
+
+const [modalOpen, setModalOpen] = useState(false);
+
+
   return (
-   <main className="min-h-screen flex flex-col justify-between items-center bg-purple-800 px-6 pt-6 text-white">
+   <main className="min-h-screen flex flex-col justify-between items-center bg-purple-700 px-6 pt-6 text-white">
   {/* Haut */}
       <div className="flex flex-col items-center justify-center w-full flex-grow ">
         <h1 className="text-3xl font-bold mb-10">Léna et Jade</h1>
         <div className="w-full max-w-md space-y-4">
-          {links.map((link, i) => (
-            <a
-              key={i}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center bg-purple-700 hover:bg-purple-600 transition rounded-xl px-4 py-3 text-lg font-medium"
-            >
-              {link.icon}
-              {link.title}
-            </a>
-          ))}
+         {links.map((link, i) => {
+  const isDisabled = !link.url;
+
+  return isDisabled ? (
+    <button
+      key={i}
+      onClick={() => setModalOpen(true)}
+      className="flex items-center bg-purple-700 hover:bg-purple-600 transition rounded-xl px-4 py-3 text-lg font-medium w-full"
+    >
+      {link.icon}
+      {link.title}
+    </button>
+  ) : (
+    <a
+      key={i}
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center bg-purple-800 hover:bg-purple-600 transition rounded-xl px-4 py-3 text-lg font-medium"
+    >
+      {link.icon}
+      {link.title}
+    </a>
+  );
+})}
+
         </div>
       </div>
 
       {/* Footer */}
-    <footer className="w-screen bg-gradient-to-b from-purple-800 to-purple-900 py-6">
+    <footer className="w-screen bg-gradient-to-b from-purple-700 to-purple-900 py-6">
 
 <p className="text-sm text-white text-opacity-70 text-center mx-auto w-full max-w-none">
-  Fait avec  <span className="text-2xl -mt-0.5 mr-1 ml-1 inline-block text-white drop-shadow-[0_0_4px_rgba(255,255,255,0.7)]">&hearts;</span>  par <strong>Jade et Léna Fan Page</strong>
+  Fait avec  <span className="text-2xl -mt-0.5 mr-1 ml-1 inline-block text-white drop-shadow-[0_0_4px_rgba(255,255,255,0.7)] heartbeat !transform">&hearts;</span>  par <strong>Jade et Léna Fan Page</strong>
 </p>
 
 
 </footer>
+<Dialog open={modalOpen} onOpenChange={setModalOpen}>
+  <DialogContent className="text-center">
+    <DialogHeader>
+      <DialogTitle className="text-purple-700 text-2xl">Patiente...</DialogTitle>
+    </DialogHeader>
+    <p className="text-base text-gray-800">Cette application n&lsquo;est pas encore disponible.</p>
+  </DialogContent>
+</Dialog>
 
     </main>
   );
