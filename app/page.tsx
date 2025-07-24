@@ -6,9 +6,10 @@ import { FaYoutube, FaTiktok, FaInstagram } from "react-icons/fa";
 const links = [
   {
     title: "Calendrier de Jade",
-    url: "https://monsite.com/calendrier",
+    url: "",
     icon: <Calendar className="w-5 h-5 mr-4" />,
   },
+ 
   // {
   //   title: "Dernière vidéo YouTube",
   //   url: "https://youtube.com/ma-video",
