@@ -54,7 +54,7 @@ const [modalOpen, setModalOpen] = useState(false);
    <main className="min-h-screen flex flex-col justify-between items-center bg-purple-700 px-6 pt-6 text-white">
   {/* Haut */}
       <div className="flex flex-col items-center justify-center w-full flex-grow ">
-        <h1 className="text-3xl font-bold mb-10">Léna et Jade</h1>
+        <h1 className="text-4xl font-bold mb-10">Léna et Jade</h1>
         <div className="w-full max-w-md space-y-4">
          {links.map((link, i) => {
   const isDisabled = !link.url;
@@ -63,7 +63,7 @@ const [modalOpen, setModalOpen] = useState(false);
     <button
       key={i}
       onClick={() => setModalOpen(true)}
-      className="flex items-center bg-purple-700 hover:bg-purple-600 transition rounded-xl px-4 py-3 text-lg font-medium w-full"
+      className="flex items-center bg-purple-800 hover:bg-purple-800 transition rounded-xl px-4 py-3 text-lg font-medium w-full"
     >
       {link.icon}
       {link.title}
@@ -89,7 +89,10 @@ const [modalOpen, setModalOpen] = useState(false);
     <footer className="w-screen bg-gradient-to-b from-purple-700 to-purple-900 py-6">
 
 <p className="text-sm text-white text-opacity-70 text-center mx-auto w-full max-w-none">
-  Fait avec  <span className="text-2xl -mt-0.5 mr-1 ml-1 inline-block text-white drop-shadow-[0_0_4px_rgba(255,255,255,0.7)] heartbeat !transform">&hearts;</span>  par <strong>Jade et Léna Fan Page</strong>
+  Fait avec  <span className="text-2xl mr-2 ml-1 inline-block relative -bottom-1 text-white drop-shadow-[0_0_4px_rgba(255,255,255,0.7)] heartbeat">
+  &hearts;
+</span>
+  par <strong>Jade et Léna Fan Page</strong>
 </p>
 
 
@@ -97,7 +100,7 @@ const [modalOpen, setModalOpen] = useState(false);
 <Dialog open={modalOpen} onOpenChange={setModalOpen}>
   <DialogContent className="text-center">
     <DialogHeader>
-      <DialogTitle className="text-purple-700 text-2xl">Patiente...</DialogTitle>
+      <DialogTitle className="text-purple-900 text-2xl">Patiente...</DialogTitle>
     </DialogHeader>
     <p className="text-base text-gray-800">Cette application n&lsquo;est pas encore disponible.</p>
   </DialogContent>
