@@ -12,10 +12,14 @@ import {
 const links = [
   {
     title: "Calendrier de Jade",
-    url: "",
+    url: "https://jade-calendrier.vercel.app/",
     icon: <Calendar className="w-5 h-5 mr-4" />,
   },
- 
+  {
+    title: "Calendrier de Léna",
+    url: "https://lena-schedule.vercel.app/",
+    icon: <Calendar className="w-5 h-5 mr-4" />,
+  },
   // {
   //   title: "Dernière vidéo YouTube",
   //   url: "https://youtube.com/ma-video",
@@ -51,9 +55,9 @@ const [modalOpen, setModalOpen] = useState(false);
 
 
   return (
-   <main className="min-h-screen flex flex-col justify-between items-center bg-purple-700 px-6 pt-4 text-white">
+   <main className="min-h-screen flex flex-col justify-between items-center bg-purple-700 pt-4 text-white">
   {/* Haut */}
-      <div className="flex flex-col items-center justify-center w-full flex-grow ">
+      <div className="flex flex-col items-center justify-center w-full flex-grow px-6 ">
         <h1 className="text-4xl font-bold mb-10">Léna et Jade</h1>
         <div className="w-full max-w-md space-y-4">
          {links.map((link, i) => {
@@ -86,18 +90,18 @@ const [modalOpen, setModalOpen] = useState(false);
       </div>
 
       {/* Footer */}
-    <footer className="w-screen bg-gradient-to-b from-purple-700 to-purple-900 py-6">
-
-<p className="text-sm text-white text-opacity-70 text-center mx-auto w-full max-w-none">
-  Fait avec <span className="text-2xl mr-2 ml-1 inline-block relative -bottom-1 text-white font-bold drop-shadow-[0_0_2px_rgba(255,255,255,0.4)] heartbeat">
-  &hearts;
-</span>
-
-  par <strong>Jade et Léna Fan Page</strong>
-</p>
-
-
+   <footer className="w-full bg-gradient-to-b from-purple-800 to-purple-900 py-6 border-t border-purple-600/40 shadow-inner">
+  <p className="text-sm text-white/70 text-center">
+    Retrouvez les{" "}
+    <a
+      href="https://carla-and-co.vercel.app/"
+      className="text-purple-300 hover:text-purple-100 underline underline-offset-2 transition-colors"
+    >
+      Carla Applications
+    </a>
+  </p>
 </footer>
+
 <Dialog open={modalOpen} onOpenChange={setModalOpen}>
   <DialogContent className="text-center">
     <DialogHeader>
